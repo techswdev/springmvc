@@ -74,12 +74,13 @@ public class MappingController {
         return "ok";
     }
 
+
     //case12
     @PostMapping(value = "/hello-basic12", consumes = MediaType.APPLICATION_JSON_VALUE)
     public String helloBasic12(){
         return "ok";
     }
-    
+
     //case13
     @PostMapping(value = "/hello-basic13", produces = MediaType.TEXT_PLAIN_VALUE)
     public String helloBasic13(){
