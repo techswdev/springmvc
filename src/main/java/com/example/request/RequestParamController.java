@@ -1,6 +1,9 @@
 package com.example.request;
 
+import com.example.requestmapping.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -71,6 +74,37 @@ public class RequestParamController {
     @RequestMapping("/request-param-v7")
     public String requestParamV7(
              @RequestParam Map<String, String> paraMap) {
+
+        return "okay calling";
+    }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v1")
+    public String modelAttributeV1(
+             @RequestParam String userName,
+             @RequestParam int age
+            ) {
+        
+        return "okay calling";
+    }
+    
+    @ResponseBody
+    @RequestMapping("/model-attribute-v2")
+    public String modelAttributeV2( @ModelAttribute User user) {
+
+        String username = user.getUserName();
+        int age = user.getAge();
+
+        log.info("userName :{}, age :{}", username, age);
+        return "okay calling";
+    }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v3")
+    public String modelAttributeV3(User user) {
+
+        String username = user.getUserName();
+        int age = user.getAge();
 
         return "okay calling";
     }
