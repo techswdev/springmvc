@@ -95,7 +95,6 @@ public class RequestParamController {
         String username = user.getUserName();
         int age = user.getAge();
 
-        log.info("userName :{}, age :{}", username, age);
         return "okay calling";
     }
 
